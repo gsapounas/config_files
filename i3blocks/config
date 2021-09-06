@@ -1,0 +1,37 @@
+[keymap]
+label=⌨ 
+command=bash -c 'xkb-switch; xkb-switch -W'
+interval=persist
+color=#aac8d9
+
+[DISK]
+command=df -h / | awk '/\//{ printf(" %4s/%s\n", $4, $2)}'
+interval=2
+color=#aac8d9
+
+[CPU]
+full_text= 0.00% |  00.0°C
+command=~/.config/i3blocks/cpu/cpu_info.sh
+interval=repeat
+color=#aac8d9
+
+[MEM]
+command=free -h | awk '/Mem:/ { printf(" %5s/%s\n", $3, $2) }'
+interval=1
+color=#aac8d9
+
+[SOUND]
+full_text= 0%
+command=~/.config/i3blocks/sound/sound_info.sh
+interval=1
+signal=1
+color=#aac8d9
+
+# Date Time
+#
+[TIME]
+command=date '+%d-%m-%Y | %H:%M:%S'
+interval=1
+color=#aac8d9
+
+
